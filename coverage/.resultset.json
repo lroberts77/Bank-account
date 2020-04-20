@@ -1,0 +1,67 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/student/Desktop/projects2/tech-tests/bank-account/spec/bankaccount_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          2,
+          null,
+          1,
+          4,
+          null,
+          null,
+          null,
+          1,
+          null,
+          2,
+          null,
+          1,
+          4,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/student/Desktop/projects2/tech-tests/bank-account/lib/bankaccount.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          5,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "timestamp": 1587394937
+  }
+}
