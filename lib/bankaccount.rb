@@ -25,8 +25,8 @@ class Bankaccount
     end
 
     def printstatement
-        statement = Accountstatement.new(@transactions)
-        puts statement.statement
+        printstatement = Accountstatement.new(@transactions)
+        puts printstatement.statement
     end
 
     # def statement
