@@ -40,7 +40,7 @@ date || credit || debit || balance
 ## <a name="Install">Installation</a>
 * To clone the repo
 ```shell
-$ git clone https://
+$ git clone https://github.com/lroberts77/Bank-account
 $ cd bank-account
 $ bundle
 ```
