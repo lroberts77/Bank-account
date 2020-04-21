@@ -8,8 +8,7 @@ class Accountstatement
     end
 
     def statement
-        # if @transactions == []
-        # end
+
         array = @transactions
         
         return "date || credit || debit || balance\n#{(array.reverse).join("\n")}"

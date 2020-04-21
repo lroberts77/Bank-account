@@ -24,7 +24,7 @@ class Bankaccount
        
     end
 
-    def statement
+    def printstatement
         statement = Accountstatement.new(@transactions)
         puts statement.statement
     end
