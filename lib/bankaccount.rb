@@ -1,5 +1,5 @@
 require 'Date'
-# require_relative 'statement.rb'
+require_relative 'statement.rb'
 class Bankaccount
 
     attr_reader :balance, :transactions
@@ -25,10 +25,15 @@ class Bankaccount
     end
 
     def statement
-        array = @transactions.reverse()
-        puts "date || credit || debit || balance"
-        puts array.join("\n")
+        statement = Accountstatement.new(@transactions)
+        puts statement.statement
     end
+
+    # def statement
+    #     array = @transactions.reverse()
+    #     puts "date || credit || debit || balance"
+    #     puts array.join("\n")
+    # end
 end
 
 

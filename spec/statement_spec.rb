@@ -1,21 +1,19 @@
 require 'bankaccount.rb'
+require 'statement.rb'
+require 'timecop'
 
-describe Bankaccount do
-    # let(account) {Bankaccount.new}
-
-    describe "transactions" do
-        it "start statement is empty" do
-        expect(subject.transactions).to eq(["date || credit || debit || balance"])
-    p subject.transactions
-        end
-    end
-end
 
 describe Accountstatement do
+    let(:transactions) {double :transactions}
 
     describe "#transactions" do
         it "has the correct header" do
-            expect(subject.statement).to eq("date || credit || debit || balance")
+            statement = Accountstatement.new(["ppp","ppp","ppp"])
+            expect( statement.statement).to start_with("date || credit || debit || balance")
+            p statement.statement
         end
     end
+
+
 end
+    

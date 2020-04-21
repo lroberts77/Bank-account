@@ -1,10 +1,18 @@
-require 'bankaccount.rb'
+# require 'bankaccount.rb'
 class Accountstatement
 
-def statement
-    array = @transactions.reverse()
-    puts "date || credit || debit || balance"
-    puts array.join("\n")
-end
+    def initialize(transactions)
+
+        @transactions = transactions
+
+    end
+
+    def statement
+        # if @transactions == []
+        # end
+        array = @transactions
+        
+        return "date || credit || debit || balance\n#{(array.reverse).join("\n")}"
+    end
     
 end
