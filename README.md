@@ -59,7 +59,7 @@ $ require "./lib/bankaccount.rb"
 $ account = Bankaccount.new
 $ account.deposit(100.99)
 $ account.deposit(100)
-$ account.withdrawal(50.20)
-$ account.withdrawal(30.20)
+$ account.withdraw(50.20)
+$ account.withdraw(30.20)
 $ account.statement
 ```
