@@ -40,8 +40,7 @@ date || credit || debit || balance
 ```
 
 ## <a name="Project">Project Direction</a>
-I started this tech test by writing tests to see if the code executed everything on the requirements specification. All the tests passed therefore I knew that the code was working. Because of all the if and else statements I couldn't follow the structure, so I began rewriting the code. I separated the items into if statements and put the value adjustments into ternary operators. By doing this I distilled the code and made it easier to read by item and behaviour.
-
+For this tech test i tried to use code simplicity to keep the code readable and concise. Whilst splitting the Accountstatement class form the Bankaccount class I learned about dependancy injection which made the task easier. Next on my list is to move the transaction handling into a different class.
 
 ## <a name="Install">Installation</a>
 * To clone the repo

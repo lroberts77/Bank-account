@@ -13,15 +13,19 @@ class Bankaccount
 
     def deposit(amount)
         @balance += amount
+        #pushes a deposit string pre formatted into the transactions array
         @transactions << "#{@date} || #{"%.02f" % amount} || || #{"%.02f" % @balance}"
     end
 
     def withdraw(amount)
-        @balance -= amount unless @balance <= amount
+        #user can withdraw unless the amount is greater than the balance
+        @balance -= amount unless @balance < amount
+        #pushes a withdraw string pre formatted into the transactions array
         @transactions << "#{@date} || || #{"%.02f" % amount} || #{"%.02f" % @balance}"
     end
 
     def outputstatement
+        #prints out the formatted statement 
         @statement.printstatement(@transactions)
     end
 end
