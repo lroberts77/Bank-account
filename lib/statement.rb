@@ -1,17 +1,9 @@
-# require 'bankaccount.rb'
-class Accountstatement
+ class Accountstatement
 
-    def initialize(transactions)
-
-        @transactions = transactions
-
+    def printstatement(transaction)
+        puts "date || credit || debit || balance\n#{transaction.reverse.join("\n")}"
     end
-
-    def statement
-
-        array = @transactions
-        
-        return "date || credit || debit || balance\n#{(array.reverse).join("\n")}"
-    end
-    
 end
+
+
+

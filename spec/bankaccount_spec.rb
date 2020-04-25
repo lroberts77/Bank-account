@@ -3,10 +3,12 @@ require 'timecop'
 
 describe Bankaccount do
 
-    it "has a starting balance of zero" do
-        account = Bankaccount.new
-        account.balance
-        expect(subject.balance).to eq(0)
+    describe "#balance" do
+        it "has a starting balance of zero" do
+            account = Bankaccount.new
+            account.balance
+            expect(subject.balance).to eq(0)
+        end
     end
 
     describe "#deposits" do
@@ -14,33 +16,48 @@ describe Bankaccount do
         it "can deposit money" do
          expect{subject.deposit (100)}.to change{subject.balance}.by 100
         end
+        it "increases a users balance" do
+            account = Bankaccount.new
+            account.deposit(200)
+            expect(account.balance).to eq(200)
+        end
     end
     
     describe "#withdrawal" do
         it{is_expected.to respond_to(:withdraw).with(1).argument}
         it "can withdraw money" do
-         expect{subject.withdraw (100)}.to change{subject.balance}.by -100
+            subject.deposit(400)
+            expect{subject.withdraw (200)}.to change{subject.balance}.by -200
+        end
+        it "decreases a users balance" do
+            account = Bankaccount.new
+            account.deposit(500)
+            account.withdraw(200)
+            expect(account.balance).to eq(300)
+        end
+        it "a users balance cannot go below zero" do
+            account = Bankaccount.new
+            account.deposit(100)
+            account.withdraw(101)
+            expect(account.balance).to eq(100)
         end
     end
 
-    describe "transactions" do
+    describe "#transactions" do
         it "start statement is empty" do
         expect(subject.transactions).to eq([])
-    p subject.transactions
         end
     end
 
     describe "#printstatement" do
         it "returns statement" do
             Timecop.freeze(Time.local(2020,04,21)) do
-                account = Bankaccount.new
-                4.times{account.deposit(100)}
-                account.withdraw(150.32)
-                expect{account.printstatement}.to output("date || credit || debit || balance\n21/04/2020 || || 150.32 || 249.68\n21/04/2020 || 100.00 || || 400.00\n21/04/2020 || 100.00 || || 300.00\n21/04/2020 || 100.00 || || 200.00\n21/04/2020 || 100.00 || || 100.00\n").to_stdout
+                statement_double = double :statement, printstatement: "date || credit || debit || balance"
+                account = Bankaccount.new(statement_double)
+                expect(account.outputstatement).to eq("date || credit || debit || balance")
             end
         end
     end
-
 end
 
 

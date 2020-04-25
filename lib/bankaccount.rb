@@ -3,38 +3,31 @@ require_relative 'statement.rb'
 class Bankaccount
 
     attr_reader :balance, :transactions
+    @date = DateTime.now.strftime "%d/%m/%Y"
 
-    def initialize
+    def initialize(statement = Accountstatement.new)
+        @statement = statement
         @balance = 0
-        @date = DateTime.now.strftime "%d/%m/%Y"
         @transactions = []
     end
 
-    # private
     def deposit(amount)
         @balance += amount
         @transactions << "#{@date} || #{"%.02f" % amount} || || #{"%.02f" % @balance}"
-        p @transactions
     end
 
     def withdraw(amount)
-        @balance -= amount
+        @balance -= amount unless @balance <= amount
         @transactions << "#{@date} || || #{"%.02f" % amount} || #{"%.02f" % @balance}"
-        p @transactions
-       
     end
 
-    def printstatement
-        printstatement = Accountstatement.new(@transactions)
-        puts printstatement.statement
+    def outputstatement
+        @statement.printstatement(@transactions)
     end
-
-    # def statement
-    #     array = @transactions.reverse()
-    #     puts "date || credit || debit || balance"
-    #     puts array.join("\n")
-    # end
 end
+
+
+       
 
 
         

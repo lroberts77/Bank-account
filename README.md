@@ -4,6 +4,7 @@
 ## Index
 * [Installation](#Install)
 * [Rspec Tests](#Rspec)
+* [Project Direction](#Project)
 * [Usage](#Usage)
 
 Today, you'll practice doing a tech test.
@@ -37,6 +38,11 @@ date || credit || debit || balance
 13/01/2012 || 2000.00 || || 3000.00
 10/01/2012 || 1000.00 || || 1000.00
 ```
+
+## <a name="Project">Project Direction</a>
+I started this tech test by writing tests to see if the code executed everything on the requirements specification. All the tests passed therefore I knew that the code was working. Because of all the if and else statements I couldn't follow the structure, so I began rewriting the code. I separated the items into if statements and put the value adjustments into ternary operators. By doing this I distilled the code and made it easier to read by item and behaviour.
+
+
 ## <a name="Install">Installation</a>
 * To clone the repo
 ```shell
@@ -52,14 +58,15 @@ $ cd bank-account
 $ rspec
 ```
 
+
 ## <a name="Usage">Usage</a>
-irb
+in the terminal
 ```ruby
-$ require "./lib/bankaccount.rb"
+$ ruby irb.rb
 $ account = Bankaccount.new
 $ account.deposit(100.99)
 $ account.deposit(100)
 $ account.withdraw(50.20)
 $ account.withdraw(30.20)
-$ account.statement
+$ account.outputstatement
 ```
