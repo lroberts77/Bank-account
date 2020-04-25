@@ -37,9 +37,8 @@ describe Bankaccount do
         end
         it "a users balance cannot go below zero" do
             account = Bankaccount.new
-            account.deposit(100)
-            account.withdraw(101)
-            expect(account.balance).to eq(100)
+            account.withdraw(1)
+            expect(account.balance).to eq(0)
         end
     end
 
