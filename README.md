@@ -40,7 +40,7 @@ date || credit || debit || balance
 ```
 
 ## <a name="Project">Project Direction</a>
-For this tech test i tried to use code simplicity to keep the code readable and concise. Whilst splitting the Accountstatement class form the Bankaccount class I learned about dependancy injection which made the task easier. Next on my list is to move the transaction handling into a different class.
+For this tech test i tried to use code simplicity to keep the code readable and concise. Whilst splitting the Accountstatement class form the Bankaccount class I learned about dependancy injection which made the task easier. Next on my list is to move the transaction handling and formatting into a different class.
 
 ## <a name="Install">Installation</a>
 * To clone the repo
