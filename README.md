@@ -67,5 +67,6 @@ $ account.deposit(100.99)
 $ account.deposit(100)
 $ account.withdraw(50.20)
 $ account.withdraw(30.20)
-$ account.outputstatement
+$ account.outputstatement      
+(this displays your current balance)
 ```
